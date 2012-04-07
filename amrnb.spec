@@ -3,36 +3,33 @@
 %define develname %mklibname -d amrnb
 %define distsuffix plf
 
-Summary: AMR NarrowBand speech codec
-Name: amrnb
-Version: 7.0.0.2
-Release: %mkrel 3
-License: Distributable
-Group: System/Libraries
-URL: http://www.penguin.cz/~utx/amr
-Source: http://ftp.penguin.cz/pub/users/utx/amr/amrnb-%{version}.tar.bz2
-Source1: http://www.3gpp.org/ftp/Specs/archive/26_series/26.104/26104-700.zip
-BuildRoot: %{_tmppath}/%{name}-%{version}-%{release}-root
+Name:		amrnb
+Version:	7.0.0.2
+Release:	%mkrel 3
+Summary:	AMR NarrowBand speech codec
+License:	Distributable
+Group:		System/Libraries
+URL:		http://www.penguin.cz/~utx/amr
+Source:		http://ftp.penguin.cz/pub/users/utx/amr/amrnb-%{version}.tar.bz2
+Source1:	http://www.3gpp.org/ftp/Specs/archive/26_series/26.104/26104-700.zip
 
 %description
 AMR-NB is a narrowband speech codec used in mobile phones.
 
-This package is in restricted as it might violate some patents.
+This package is in restricted as it may violate some patents.
 
 %package -n %{libname}
-Summary: AMR NarrowBand speech codec development files
-Group: System/Libraries
+Summary:	AMR NarrowBand speech codec development files
+Group:		System/Libraries
 
 %description -n %{libname}
 AMR-NB is a narrowband speech codec used in mobile phones development files.
 
 %package -n %{develname}
-Summary: AMR NarrowBand speech codec development files
-Group: Development/C
-Requires: %{libname} = %{version}
-Provides: lib%{name}-devel = %{version}-%{release}
-Conflicts: %mklibname -d amrnb 0
-Obsoletes: %mklibname -d amrnb 2
+Summary:	AMR NarrowBand speech codec development files
+Group:		Development/C
+Requires:	%{libname} = %{version}
+Provides:	lib%{name}-devel = %{version}-%{release}
 
 %description -n %{develname}
 AMR-NB is a narrowband speech codec used in mobile phones development files.
@@ -46,17 +43,11 @@ cp %{SOURCE1} .
 %make
 
 %install
-%{__rm} -rf %{buildroot}
+%__rm -rf %{buildroot}
 %makeinstall_std
 
 %clean
-%{__rm} -rf %{buildroot}
-
-
-%if %mdkversion < 200900
-%post -n %{libname} -p /sbin/ldconfig
-%postun -n %{libname} -p /sbin/ldconfig
-%endif
+%__rm -rf %{buildroot}
 
 %files
 %defattr(-,root,root,0755)
