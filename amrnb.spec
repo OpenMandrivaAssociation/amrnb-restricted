@@ -5,7 +5,7 @@
 
 Name:		amrnb
 Version:	7.0.0.2
-Release:	%mkrel 3
+Release:	4
 Summary:	AMR NarrowBand speech codec
 License:	Distributable
 Group:		System/Libraries
@@ -43,26 +43,18 @@ cp %{SOURCE1} .
 %make
 
 %install
-%__rm -rf %{buildroot}
 %makeinstall_std
 
-%clean
-%__rm -rf %{buildroot}
-
 %files
-%defattr(-,root,root,0755)
 %doc README AUTHORS TODO COPYING
 %{_bindir}/*
 
 %files -n %{libname}
-%defattr(-,root,root,0755)
 %{_libdir}/libamrnb.so.%{major}*
 
 %files -n %{develname}
-%defattr(-,root,root,0755)
 %{_includedir}/amrnb/
 %{_libdir}/libamrnb.a
-%{_libdir}/libamrnb.la
 %{_libdir}/libamrnb.so
 
 %changelog
