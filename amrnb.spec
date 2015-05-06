@@ -5,7 +5,7 @@
 
 Name:		amrnb
 Version:	7.0.0.2
-Release:	4
+Release:	5
 Summary:	AMR NarrowBand speech codec
 License:	Distributable
 Group:		System/Libraries
