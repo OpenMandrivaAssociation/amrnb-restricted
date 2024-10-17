@@ -9,7 +9,7 @@ Release:	%mkrel 3
 Summary:	AMR NarrowBand speech codec
 License:	Distributable
 Group:		System/Libraries
-URL:		http://www.penguin.cz/~utx/amr
+URL:		https://www.penguin.cz/~utx/amr
 Source:		http://ftp.penguin.cz/pub/users/utx/amr/amrnb-%{version}.tar.bz2
 Source1:	http://www.3gpp.org/ftp/Specs/archive/26_series/26.104/26104-700.zip
 
