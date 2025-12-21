@@ -13,6 +13,11 @@ URL:		https://www.penguin.cz/~utx/amr
 Source:		http://ftp.penguin.cz/pub/users/utx/amr/amrnb-%{version}.tar.bz2
 Source1:	http://www.3gpp.org/ftp/Specs/archive/26_series/26.104/26104-700.zip
 
+BuildRequires:	autoconf
+BuildRequires:	automake
+BuildRequires:	libtool-base
+BuildRequires:	slibtool
+BuildRequires:	make
 %description
 AMR-NB is a narrowband speech codec used in mobile phones.
 
